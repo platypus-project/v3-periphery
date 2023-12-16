@@ -1596,10 +1596,10 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-4.6.0.tgz#3c7c9c46e678feefe7a2e5bb609d3dbd665ffb3f"
   integrity sha512-t09vSN3MdfsyCHoFcTRCH/iUtG7OJ0CsjzB8cjAmKc/va/kIgeDI/TxsigdncE/4be734m0cvIYwNaV4i2XqAw==
 
-"@solarity/hardhat-migrate@^2.0.0-alpha.21":
-  version "2.0.0-alpha.21"
-  resolved "https://registry.yarnpkg.com/@solarity/hardhat-migrate/-/hardhat-migrate-2.0.0-alpha.21.tgz#bc50f56f8790d579ba035a365665a322abcd2e02"
-  integrity sha512-zWlqnIN1/99RTg+wQAyEmm9BXGcTtdXYXGWjrceeYLtMRmSP4EARYckRRY/FrwYjruP54I7n2LMy/LcZdsiaKw==
+"@solarity/hardhat-migrate@^2.0.0-alpha.22":
+  version "2.0.0-alpha.22"
+  resolved "https://registry.yarnpkg.com/@solarity/hardhat-migrate/-/hardhat-migrate-2.0.0-alpha.22.tgz#29e9200438d5bd576415aa54beea32e1e0459f61"
+  integrity sha512-Ehd3UYkIJIhlHXI3CCmki+6BqZL5dD9x64NrF4YF+ZfV7hjxL7M8EQTY+eJn+ICPjhKml4J1ZOVPDS5n/s38RQ==
   dependencies:
     "@nomicfoundation/hardhat-ethers" "3.0.4"
     "@nomicfoundation/hardhat-verify" "1.1.1"
