@@ -1,8 +1,15 @@
+import '@typechain/hardhat'
+
 import '@nomiclabs/hardhat-ethers'
-import '@nomiclabs/hardhat-etherscan'
 import '@nomiclabs/hardhat-waffle'
-import 'hardhat-typechain'
 import 'hardhat-watcher'
+
+import '@solarity/hardhat-migrate'
+
+import * as dotenv from 'dotenv'
+dotenv.config()
+
+const accounts = process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : undefined
 
 const LOW_OPTIMIZER_COMPILER_SETTINGS = {
   version: '0.7.6',
@@ -78,11 +85,64 @@ export default {
     optimism: {
       url: `https://optimism-mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`,
     },
+    piccadilly: {
+      url: `https://rpc1.piccadilly.autonity.org/`,
+      accounts,
+    },
+    qdevnet: {
+      url: `https://rpc.qdevnet.org`,
+      accounts,
+    },
+    qtestnet: {
+      url: `https://rpc.qtestnet.org`,
+      accounts,
+    },
+    qmainnet: {
+      url: `https://rpc.q.org`,
+      accounts,
+    },
   },
   etherscan: {
-    // Your API key for Etherscan
-    // Obtain one at https://etherscan.io/
-    apiKey: process.env.ETHERSCAN_API_KEY,
+    apiKey: {
+      piccadilly: 'abc',
+      qdevnet: 'abc',
+      qtestnet: 'abc',
+      qmainnet: 'abc',
+    },
+    customChains: [
+      {
+        network: 'qdevnet',
+        chainId: 35442,
+        urls: {
+          apiURL: 'http://54.73.188.73:8080/api',
+          browserURL: 'http://54.73.188.73:8080',
+        },
+      },
+      {
+        network: 'qtestnet',
+        chainId: 35443,
+        urls: {
+          apiURL: 'https://explorer-old.qtestnet.org/api',
+          browserURL: 'https://explorer-old.qtestnet.org',
+        },
+      },
+      {
+        network: 'qmainnet',
+        chainId: 35441,
+        urls: {
+          apiURL: 'https://explorer.q.org/api',
+          browserURL: 'https://explorer.q.org',
+        },
+      },
+      {
+        network: `piccadilly`,
+        chainId: 65100001,
+        urls: {
+          apiURL: 'https://piccadilly.autonity.org/api',
+          browserURL: 'https://piccadilly.autonity.org',
+        },
+      },
+    ],
   },
   solidity: {
     compilers: [DEFAULT_COMPILER_SETTINGS],
@@ -100,5 +160,11 @@ export default {
       files: ['./test/**/*'],
       verbose: true,
     },
+  },
+  typechain: {
+    outDir: 'typechain',
+    target: 'ethers-v5',
+    alwaysGenerateOverloads: true,
+    discriminateTypes: true,
   },
 }
