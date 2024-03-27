@@ -136,7 +136,7 @@ export default {
       },
       {
         network: `piccadilly`,
-        chainId: 65100001,
+        chainId: 65100002,
         urls: {
           apiURL: 'https://piccadilly.autonity.org/api',
           browserURL: 'https://piccadilly.autonity.org',
